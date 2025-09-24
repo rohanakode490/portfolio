@@ -108,8 +108,8 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                                             size="sm"
                                             onClick={() => handleNavigate(item.id)}
                                             onMouseEnter={() => setHoveredSection(item.id)}
-                                            className={`transform relative transition-all duration-300 bg-transparent text-[var(--text)] cursor-pointer hover:bg-transparent
-                                                ${isActive ? "shadow-md dark:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.1)]" : "hover:text-[var(--text-hover)] hover:scale-110"}
+                                            className={`transform relative transition-all duration-300 bg-transparent text-[var(--text)] cursor-pointer hover:bg-transparent hover:text-[var(--text-hover)] hover:scale-110
+                                                ${isActive ? "shadow-md dark:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.1)]" : ""}
                                             `}
                                         >
                                             {item.label}
@@ -125,12 +125,12 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                         />
                     </div>
 
-                    <button className="text-[var(--text)] cursor-pointer" onClick={ToggleTheme} suppressHydrationWarning>
+                    <button className="text-[var(--text)] cursor-pointer hover:scale-120 hover:text-[var(--text-hover)] " onClick={ToggleTheme} suppressHydrationWarning>
                         {/* {resolvedTheme === "light" ? <LuSun /> : <LuMoon />} */}
                         {resolvedTheme ? (
                             resolvedTheme === "light" ? <LuSun /> : <LuMoon />
                         ) : (
-                            <div className="w-5 h-5" /> // empty box placeholder
+                            <div className="w-5 h-5" /> // empty box 
                         )}
                     </button>
                 </div>

@@ -16,9 +16,9 @@ export default function BackgroundElements() {
         <div className='fixed inset-0 overflow-hidden pointer-events-none'>
             <div className="absolute inset-0">
                 <div
-                    className='absolute inset-0 opacity-[0.08] dark:opacity-[0.12]'
+                    className='absolute inset-0 opacity-[0.3] dark:opacity-[0.12]'
                     style={{
-                        backgroundImage: `
+                        backgroundImage: ` 
                             liner-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
                             liner-gradient(90degm rgba(59, 130, 246, 0.3) 1px, transparent 1px)  
                         `,
@@ -88,7 +88,7 @@ export default function BackgroundElements() {
                             scale: [0.8, 1.2, 0.8],
                         }}
                         transition={{
-                            duration: 50 + Math.random() * 5,
+                            duration: 5 + Math.random() * 5,
                             repeat: Number.POSITIVE_INFINITY,
                             delay: Math.random() * 50,
                         }}

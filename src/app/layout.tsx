@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rohan Akode - Web Developer Portfolio",
   description: "Full-stack web developer specializing in React, Next.js, and modern web technologies",
-  keywords: ["web developer", "react", "nextjs", "typescript", "portfolio"],
+  keywords: ["web developer", "react", "nextjs", "typescript", "portfolio", 'portfolio website', "nodejs", "express", "full stack"],
   authors: [{ name: "Rohan Akode" }],
   creator: "Rohan Akode",
   openGraph: {

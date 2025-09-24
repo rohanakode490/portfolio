@@ -1,5 +1,6 @@
 "use client"
 
+import { motion } from "framer-motion"
 import Contacts from "@/components/sections/contacts";
 import Education from "@/components/sections/education";
 import Navbar from "@/components/navbar";
@@ -68,17 +69,55 @@ export default function Home() {
         <BackgroundElements />
 
         <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
-        Main Page
-        <div>
-          <div>
+        <div className="flex flex-col lg:grid lg:grid-cols-2 min-h-screen pt-16 md:pt-20 relative z-10">
+          <div className="p-6 md:p-6 lg:p-8 flex items-center justify-center lg:sticky lg:top-20 lg:h-[89vh] ">
             <Profile />
           </div>
-          <div>
-            <Experience />
-            <Projects />
-            <Skills />
-            <Education />
-            <Contacts />
+          <div className="p-4 md:p-6">
+            <main className="min-h-screen overflow-hidden">
+              <div className="space-y-8 md:space-y-10 lg:space-y-12 pr-0 md:pr-2 lg:pr-4">
+                <motion.div
+                  id="experience"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <Experience />
+                </motion.div>
+                <motion.div
+                  id="projects"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  <Projects />
+                </motion.div>
+                <motion.div
+                  id="skills"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <Skills />
+                </motion.div>
+                <motion.div
+                  id="education"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <Education />
+                </motion.div>
+                <motion.div
+                  id="contact"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <Contacts />
+                </motion.div>
+              </div>
+            </main>
           </div>
         </div>
       </div>

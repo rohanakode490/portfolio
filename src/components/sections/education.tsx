@@ -1,4 +1,6 @@
-import React from 'react'
+import { motion } from "framer-motion"
+import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card"
+import { LuCalendar, LuMapPin } from "react-icons/lu"
 
 const education = [
     {
@@ -11,6 +13,43 @@ const education = [
 
 export default function Education() {
     return (
-        <div>Education</div>
+        <section id="education" className='scroll-mt-8'>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+            >
+                <h2 className="text-3xl font-bold text-foreground mb-8">Education</h2>
+
+                <div className="space-y-4">
+                    {education.map((edu, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                        >
+                            <Card className="hover:shadow-md transition-shadow duration-300 bg-card/50 backdrop-blur-sm border-border/50">
+                                <CardHeader className="pb-3">
+                                    <CardTitle className="text-lg text-card-foreground">{edu.degree}</CardTitle>
+                                    <CardDescription className="text-base font-medium text-primary">{edu.institution}</CardDescription>
+
+                                    <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
+                                        <div className="flex items-center gap-1">
+                                            <LuCalendar className="w-3 h-3" />
+                                            <span>{edu.duration}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <LuMapPin className="w-3 h-3" />
+                                            <span>{edu.location}</span>
+                                        </div>
+                                    </div>
+                                </CardHeader>
+                            </Card>
+                        </motion.div>
+                    ))}
+                </div>
+            </motion.div>
+        </section>
     )
 }
