@@ -18,6 +18,7 @@ export default function Education() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
             >
                 <h2 className="text-3xl font-bold text-foreground mb-8">Education</h2>
 
@@ -28,6 +29,7 @@ export default function Education() {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true }}
                         >
                             <Card className="hover:shadow-md transition-shadow duration-300 bg-card/50 backdrop-blur-sm border-border/50">
                                 <CardHeader className="pb-3">

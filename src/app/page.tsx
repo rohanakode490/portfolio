@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Contacts from "@/components/sections/contacts";
 import Education from "@/components/sections/education";
 import Navbar from "@/components/navbar";
 import Projects from "@/components/sections/projects";
@@ -9,6 +8,7 @@ import Skills from "@/components/sections/skills";
 import Profile from "@/components/sections/profile";
 import Experience from "@/components/sections/experiece";
 import { useEffect, useState } from "react";
+import { scrollToSection } from "@/lib/navigation"
 import BackgroundElements from "@/components/background-elements";
 
 export default function Home() {
@@ -16,12 +16,13 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["experience", "projects", "skills", "education", "contact"]
+      const sections = ["experience", "projects", "skills", "education"]
       const scrollPosition = window.scrollY + 200
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i]
         const element = document.getElementById(section)
+
         if (element) {
           const { offsetTop } = element
           if (scrollPosition >= offsetTop) {
@@ -49,25 +50,10 @@ export default function Home() {
     return () => window.removeEventListener("scroll", throttledHandleScroll)
   }, [])
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const rect = element.getBoundingClientRect()
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-      const offsetTop = rect.top + scrollTop - 100
-
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth"
-      })
-    }
-  }
-
   return (
     <>
       <div className="min-h-screen bg-background relative">
         <BackgroundElements />
-
         <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
         <div className="flex flex-col lg:grid lg:grid-cols-2 min-h-screen pt-16 md:pt-20 relative z-10">
           <div className="p-6 md:p-6 lg:p-8 flex items-center justify-center lg:sticky lg:top-20 lg:h-[89vh] ">
@@ -81,6 +67,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
                 >
                   <Experience />
                 </motion.div>
@@ -89,6 +76,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
                 >
                   <Projects />
                 </motion.div>
@@ -97,6 +85,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
                 >
                   <Skills />
                 </motion.div>
@@ -105,16 +94,9 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
                 >
                   <Education />
-                </motion.div>
-                <motion.div
-                  id="contact"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <Contacts />
                 </motion.div>
               </div>
             </main>

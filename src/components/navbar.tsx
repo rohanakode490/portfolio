@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { MdClose, MdMenu } from "react-icons/md";
 import { useTheme } from "next-themes";
 import { LuMoon, LuSun } from "react-icons/lu";
+import { usePathname, useRouter } from "next/navigation";
 
 interface NavbarProps {
     activeSection: string;
@@ -22,6 +23,8 @@ const navigationItems = [
 
 export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
     const { resolvedTheme, setTheme } = useTheme()
+    const router = useRouter()
+    const pathname = usePathname()
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [hoveredSection, setHoveredSection] = useState<string | null>(null)
@@ -30,11 +33,17 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
 
     const [scope, animate] = useAnimate();
 
-    //Suppressing Hydration error
-    const [mounted, setMounted] = useState(false)
-
     const handleNavigate = (section: string) => {
-        onNavigate(section)
+        console.log("pathname", pathname)
+        if (section === "contact") {
+            router.push("/contactme") // Navigate to contact page
+        }
+        else if (pathname === '/contactme') {
+            router.push(`/#${section}`) // If on contact page, go to the main page and scroll to the selected section
+        }
+        else {
+            onNavigate(section) // If on main page, go the selected section
+        }
         setIsMobileMenuOpen(false)
     }
 
@@ -65,15 +74,6 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
 
         return () => window.removeEventListener("resize", updateUnderline);
     }, [activeSection, hoveredSection, animate, scope]);
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
-
-    if (!mounted) {
-        return null
-    }
 
     return (
         <motion.nav

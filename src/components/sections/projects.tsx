@@ -40,6 +40,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
         >
             <h2 className="text-3xl font-bold text-foreground mb-8">Projects</h2>
 
@@ -53,6 +54,7 @@ export default function Projects() {
                         className="group"
                         onHoverStart={() => setHoveredProject(index)}
                         onHoverEnd={() => setHoveredProject(null)}
+                        viewport={{ once: true }}
                     >
                         <Card className="hover:shadow-md transition-all duration-300 overflow-hidden bg-card/50 backdrop-blur-sm border-border/50">
                             <div className="flex">
