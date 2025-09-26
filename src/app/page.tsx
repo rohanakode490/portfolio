@@ -10,6 +10,7 @@ import Experience from "@/components/sections/experiece";
 import { useEffect, useState } from "react";
 import { scrollToSection } from "@/lib/navigation"
 import BackgroundElements from "@/components/background-elements";
+import Footer from "@/components/footer";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("experience")
@@ -102,6 +103,7 @@ export default function Home() {
             </main>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

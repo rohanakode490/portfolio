@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { BsDatabaseFill } from 'react-icons/bs'
 import { SiCss3, SiDocker, SiExpress, SiGit, SiHtml5, SiKubernetes, SiMongodb, SiMysql, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiTailwindcss } from 'react-icons/si'
 import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card'
+import { Badge } from '../ui/badge'
 
 const techStack = [
     { name: "HTML", icon: <SiHtml5 className='group-hover:text-[#E34F26]' /> },
@@ -10,7 +11,7 @@ const techStack = [
     { name: "TailwindCSS", icon: <SiTailwindcss className='group-hover:text-[#06B6D4]' /> },
     { name: "React.js", icon: <SiReact className='group-hover:text-[#61DAFB]' /> },
     { name: "Next.js", icon: <SiNextdotjs className='group-hover:text-[#fff]' /> },
-    { name: "Framer Motion", icon: <svg role="img" viewBox="0 0 200 54" xmlns="http://www.w3.org/2000/svg" className="sm:group-hover:-translate-y-1 size-6 transition-all duration-300 undefined w-12 h-12 pl-2 group-hover:text-[#000] group-hover:bg-[#FFF42B]"><title>Framer Motion</title><path fill="currentColor" d="M 58.148 0 L 27.72 53.952 L 0 53.952 L 23.759 11.824 C 27.442 5.294 36.633 0 44.288 0 Z M 126.125 13.488 C 126.125 6.039 132.33 0 139.985 0 C 147.64 0 153.845 6.039 153.845 13.488 C 153.845 20.937 147.64 26.976 139.985 26.976 C 132.33 26.976 126.125 20.937 126.125 13.488 Z M 63.345 0 L 91.065 0 L 60.638 53.952 L 32.918 53.952 Z M 96.085 0 L 123.805 0 L 100.046 42.128 C 96.363 48.659 87.172 53.952 79.517 53.952 L 65.657 53.952 Z" /></svg> },
+    { name: "Framer Motion", icon: <svg role="img" viewBox="0 0 200 54" xmlns="http://www.w3.org/2000/svg" className="sm:group-hover:-translate-y-1 size-6 transition-all duration-300 undefined w-12 h-12 pl-2 rounded-xl group-hover:text-[#000] group-hover:bg-[#FFF42B]"><title>Framer Motion</title><path fill="currentColor" d="M 58.148 0 L 27.72 53.952 L 0 53.952 L 23.759 11.824 C 27.442 5.294 36.633 0 44.288 0 Z M 126.125 13.488 C 126.125 6.039 132.33 0 139.985 0 C 147.64 0 153.845 6.039 153.845 13.488 C 153.845 20.937 147.64 26.976 139.985 26.976 C 132.33 26.976 126.125 20.937 126.125 13.488 Z M 63.345 0 L 91.065 0 L 60.638 53.952 L 32.918 53.952 Z M 96.085 0 L 123.805 0 L 100.046 42.128 C 96.363 48.659 87.172 53.952 79.517 53.952 L 65.657 53.952 Z" /></svg> },
     { name: "Node.js", icon: <SiNodedotjs className='group-hover:text-[#5FA04E]' /> },
     { name: "Express", icon: <SiExpress className='group-hover:text-[#fff]' /> },
     { name: "MySQL", icon: <SiMysql className='group-hover:text-[#4479A1]' /> },
@@ -53,14 +54,17 @@ export default function Skills() {
                                 >
                                     <div className="text-4xl mb-2 group-hover:scale-110 transition-transform group">{tech.icon}</div>
 
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: hoveredTech === tech.name ? 1 : 0, y: hoveredTech === tech.name ? 0 : 10 }}
-                                        transition={{ duration: 0.2 }}
-                                        className='absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-primary text-[var(--text-hover)] font-semibold px-2 py-1 rounded text-xs whitespace-nowrap z-10 shadow-md'
+                                    <Badge variant="secondary"
+                                        className='absolute -bottom-2 left-1/2 transform -translate-x-1/2 font-semibold px-2 py-1 rounded text-xs whitespace-nowrap z-10 shadow-md'
                                     >
+                                        {/* <motion.div
+                                            initial={{ opacity: 1, y: 10 }}
+                                            // animate={{ opacity: hoveredTech === tech.name ? 1 : 0, y: hoveredTech === tech.name ? 0 : 10 }}
+                                            transition={{ duration: 0.2 }}
+                                        > */}
                                         {tech.name}
-                                    </motion.div>
+                                        {/* </motion.div> */}
+                                    </Badge>
                                 </motion.div>
                             ))}
                         </div>

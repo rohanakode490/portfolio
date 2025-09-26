@@ -6,6 +6,7 @@ import Navbar from '@/components/navbar'
 import Contacts from '@/components/sections/contacts'
 import { scrollToSection } from '@/lib/navigation'
 import { motion } from 'framer-motion'
+import Footer from '@/components/footer'
 
 export default function page() {
 
@@ -33,6 +34,7 @@ export default function page() {
                     <Contacts />
                 </motion.div>
             </div>
+            <Footer />
         </div>
     )
 }
