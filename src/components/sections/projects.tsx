@@ -10,7 +10,7 @@ const projects = [
     {
         title: "FlowCatalyst",
         descritption: "No code Automation Platform.",
-        image: "",
+        image: "/p1.png",
         technologies: ["Next.js", "TypeScript", "Node.js", "Prisma", "PostgreSQL", "Turborepo"],
         github: "https://github.com/rohanakode490/FlowCatalyst",
         live: ""
@@ -18,18 +18,18 @@ const projects = [
     {
         title: "EzCart - E-Commerce Platform",
         descritption: "Full-stack e-commerce solution with payment processing and admin dashboard.",
-        image: "",
+        image: "/p2.png",
         technologies: ["React.js", "TypeScript", "Node.js", "MongoDB", "Stripe"],
-        github: "",
-        live: ""
+        github: "https://github.com/rohanakode490/EZCart",
+        live: "https://ez-cart-frontend.vercel.app/"
     },
     {
         title: "Weather Dashboard",
         descritption: "Weather Application with location-based forecasts",
-        image: "",
+        image: "/p3.png",
         technologies: ["React.js", "OpenWeather API"],
-        github: "",
-        live: ""
+        github: "https://github.com/rohanakode490/weather-web-app",
+        live: "https://rohanakodeweatherwebapp.vercel.app/"
     },
 ]
 

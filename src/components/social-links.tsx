@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from "framer-motion"
-import { LuGithub, LuLinkedin } from 'react-icons/lu'
+import { LuGithub, LuLinkedin, LuMail } from 'react-icons/lu'
 import { RiTwitterLine } from 'react-icons/ri'
 import Link from "next/link"
 
@@ -23,6 +23,12 @@ const socialLinks = [
         href: "https://x.com/rohanakode7",
         username: "@rohanakode",
     },
+    {
+        icon: <LuMail className="w-5 h-5" />,
+        label: 'Email',
+        href: 'mailto:rohan.akode@example.com',
+        username: 'rohan.akode@example.com'
+    }
 ]
 
 

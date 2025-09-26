@@ -126,7 +126,6 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                     </div>
 
                     <button className="text-[var(--text)] cursor-pointer hover:scale-120 hover:text-[var(--text-hover)] " onClick={ToggleTheme} suppressHydrationWarning>
-                        {/* {resolvedTheme === "light" ? <LuSun /> : <LuMoon />} */}
                         {resolvedTheme ? (
                             resolvedTheme === "light" ? <LuSun /> : <LuMoon />
                         ) : (
@@ -140,7 +139,11 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
 
                     <div className="flex items-center space-x-2">
                         <div className="text-text">
-                            ThemeToggle
+                            {resolvedTheme ? (
+                                resolvedTheme === "light" ? <LuSun /> : <LuMoon />
+                            ) : (
+                                <div className="w-5 h-5" /> // empty box 
+                            )}
                         </div>
                         <Button
                             variant="ghost"
