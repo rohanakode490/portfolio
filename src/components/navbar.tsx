@@ -34,7 +34,6 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
     const [scope, animate] = useAnimate();
 
     const handleNavigate = (section: string) => {
-        console.log("pathname", pathname)
         if (section === "contact") {
             router.push("/contactme") // Navigate to contact page
         }

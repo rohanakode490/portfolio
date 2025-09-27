@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, Variants } from 'framer-motion'
 import { LuSend } from 'react-icons/lu'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
@@ -17,18 +17,32 @@ export default function Contacts() {
         message: ""
     })
 
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState<string>('')
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true)
+        setErrorMessage('')
         try {
-            // TODO: Add Resend logic
-            await new Promise((resolve) => setTimeout(resolve, 500))
+            const resp = await fetch('/api/send-email', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+
+            const data = await resp.json();
+            if (!resp.ok) {
+                throw new Error(data.error || "Failed to send email")
+            }
+
             setSubmitStatus('success')
-        } catch (error) {
+        } catch (error: any) {
             setSubmitStatus('error')
+            setErrorMessage(error.message || "Failed to send email")
         } finally {
             setIsSubmitting(false)
         }
@@ -41,7 +55,6 @@ export default function Contacts() {
             [e.target.name]: [e.target.value]
         }))
     }
-
 
     const dotVariants: Variants = {
         animate: {
@@ -183,7 +196,7 @@ export default function Contacts() {
                                         animate={{ opacity: 1 }}
                                         className='text-red-500 text-shadow-neutral-50 mt-2 text-center'
                                     >
-                                        Failed to send message. Please try again.
+                                        {errorMessage || 'Failed to send message. Please try again.'}
                                     </motion.p>
                                 )}
                             </form>
