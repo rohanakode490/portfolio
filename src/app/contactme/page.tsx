@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import BackgroundElements from '@/components/background-elements'
 import Navbar from '@/components/navbar'
 import Contacts from '@/components/sections/contacts'
@@ -8,7 +8,7 @@ import { scrollToSection } from '@/lib/navigation'
 import { motion } from 'framer-motion'
 import Footer from '@/components/footer'
 
-export default function page() {
+export default function Contactpage() {
 
     const [mounted, setMounted] = useState(false)
 

@@ -17,7 +17,7 @@ export default function Profile() {
                 className="max-w-sm mx-auto text-left"
             >
                 <div className="flex items-center gap-4 mb-3">
-                    <Avatar className="w-20 h-20 border-4 border-primary/20 flex-shrink-0">
+                    <Avatar className="w-22 h-22 border-4 border-primary/20 flex-shrink-0">
                         <AvatarImage src="/profile-pic.jpg" alt="Rohan Akode Profile Picture" />
                         <AvatarFallback className="text-xl font-semibold bg-primary text-[var(--text)]">RA</AvatarFallback>
                     </Avatar>

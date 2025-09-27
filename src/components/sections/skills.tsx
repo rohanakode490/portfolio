@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { BsDatabaseFill } from 'react-icons/bs'
 import { SiCss3, SiDocker, SiExpress, SiGit, SiHtml5, SiKubernetes, SiMongodb, SiMysql, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiTailwindcss } from 'react-icons/si'
@@ -24,7 +23,6 @@ const techStack = [
 ]
 
 export default function Skills() {
-    const [hoveredTech, setHoveredTech] = useState<string | null>(null)
     return (
         <section id='skills' className='scroll-mt-8'>
             <motion.div
@@ -48,8 +46,6 @@ export default function Skills() {
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     transition={{ duration: 0.2 }}
                                     whileHover={{ scale: 1.1, y: -5 }}
-                                    onHoverStart={() => setHoveredTech(tech.name)}
-                                    onHoverEnd={() => setHoveredTech(null)}
                                     className='relative flex flex-col items-center p-4 m-4 rounded-lg hover:bg-accent/30 transition-colors cursor-pointer group'
                                 >
                                     <div className="text-4xl mb-2 group-hover:scale-110 transition-transform group">{tech.icon}</div>
@@ -57,13 +53,7 @@ export default function Skills() {
                                     <Badge variant="secondary"
                                         className='absolute -bottom-2 left-1/2 transform -translate-x-1/2 font-semibold px-2 py-1 rounded text-xs whitespace-nowrap z-10 shadow-md'
                                     >
-                                        {/* <motion.div
-                                            initial={{ opacity: 1, y: 10 }}
-                                            // animate={{ opacity: hoveredTech === tech.name ? 1 : 0, y: hoveredTech === tech.name ? 0 : 10 }}
-                                            transition={{ duration: 0.2 }}
-                                        > */}
                                         {tech.name}
-                                        {/* </motion.div> */}
                                     </Badge>
                                 </motion.div>
                             ))}

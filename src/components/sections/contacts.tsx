@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { motion, Variants } from 'framer-motion'
 import { LuSend } from 'react-icons/lu'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
@@ -40,9 +40,10 @@ export default function Contacts() {
             }
 
             setSubmitStatus('success')
-        } catch (error: any) {
+        } catch (error: unknown) {
             setSubmitStatus('error')
-            setErrorMessage(error.message || "Failed to send email")
+            const errorMessage = error instanceof Error ? error.message : "Failed to send email";
+            setErrorMessage(errorMessage)
         } finally {
             setIsSubmitting(false)
         }
@@ -88,7 +89,7 @@ export default function Contacts() {
                     <Card className='bg-card/50 backdrop-blur-sm border-border/50 h-full'>
                         <CardHeader>
                             <CardTitle className='text-xl text-card-foreground'>Send a Message</CardTitle>
-                            <CardDescription className='mt-2'>Have a project in mind? I'd love to hear about it.</CardDescription>
+                            <CardDescription className='mt-2'>Have a project in mind? I&apos;d love to hear about it.</CardDescription>
                         </CardHeader>
 
                         <CardContent>
