@@ -32,21 +32,34 @@ export default function Education() {
                             viewport={{ once: true }}
                         >
                             <Card className="hover:shadow-md transition-shadow duration-300 bg-card/50 backdrop-blur-sm border-border/50">
-                                <CardHeader className="pb-3">
-                                    <CardTitle className="text-lg text-card-foreground">{edu.degree}</CardTitle>
-                                    <CardDescription className="text-base font-medium text-primary">{edu.institution}</CardDescription>
-
-                                    <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
-                                        <div className="flex items-center gap-1">
-                                            <LuCalendar className="w-3 h-3" />
-                                            <span>{edu.duration}</span>
-                                        </div>
-                                        <div className="flex items-center gap-1">
-                                            <LuMapPin className="w-3 h-3" />
-                                            <span>{edu.location}</span>
-                                        </div>
+                                <div className="flex items-center">
+                                    <div className="w-24 h-24 bg-muted/30 rounded-l-lg overflow-hidden relative flex-shrink-0 ">
+                                        <motion.img
+                                            src={'/uni.png'}
+                                            alt={'IIT BBS'}
+                                            className="w-full h-full object-cover"
+                                            whileHover={{ scale: 1.1 }}
+                                            transition={{ duration: 0.3 }}
+                                        />
                                     </div>
-                                </CardHeader>
+                                    <div className="flex-1">
+                                        <CardHeader className="pb-3">
+                                            <CardTitle className="text-lg text-card-foreground">{edu.degree}</CardTitle>
+                                            <CardDescription className="text-base font-medium text-primary">{edu.institution}</CardDescription>
+
+                                            <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
+                                                <div className="flex items-center gap-1">
+                                                    <LuCalendar className="w-3 h-3" />
+                                                    <span>{edu.duration}</span>
+                                                </div>
+                                                <div className="flex items-center gap-1">
+                                                    <LuMapPin className="w-3 h-3" />
+                                                    <span>{edu.location}</span>
+                                                </div>
+                                            </div>
+                                        </CardHeader>
+                                    </div>
+                                </div>
                             </Card>
                         </motion.div>
                     ))}

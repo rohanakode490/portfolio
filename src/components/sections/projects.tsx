@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "../ui/button"
 import { LuExternalLink, LuGithub } from "react-icons/lu"
 import Link from "next/link"
-import { Badge } from "../ui/badge"
+import TechStack from "../tech-stack"
 
 const projects = [
     {
@@ -35,6 +35,7 @@ const projects = [
 
 export default function Projects() {
     const [hoveredProject, setHoveredProject] = useState<number | null>(null)
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -92,16 +93,7 @@ export default function Projects() {
 
                                     <CardContent className="pt-0">
                                         <div className="flex flex-wrap gap-1">
-                                            {project.technologies.slice(0, 4).map((tech, i) => (
-                                                <Badge key={i} variant="secondary" className="text-xs px-2 py-0.5">
-                                                    {tech}
-                                                </Badge>
-                                            ))}
-                                            {project.technologies.length > 4 && (
-                                                <Badge variant="outline" className="text-xs px-2 py-0.5 cursor-pointer">
-                                                    +{project.technologies.length - 4}
-                                                </Badge>
-                                            )}
+                                            <TechStack technologies={project.technologies} />
                                         </div>
                                     </CardContent>
                                 </div>
