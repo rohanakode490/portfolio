@@ -6,7 +6,7 @@ const education = [
     {
         institution: "Indian Institute of Technology Bhubaneswar",
         degree: "Bachelor of Technology in Computer Science and Engineering",
-        duration: "2020 - 2025",
+        duration: "2020 - 2024",
         location: "Bhubaneswar, IN",
     }
 ]

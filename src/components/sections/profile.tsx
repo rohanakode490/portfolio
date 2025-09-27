@@ -18,7 +18,7 @@ export default function Profile() {
             >
                 <div className="flex items-center gap-4 mb-3">
                     <Avatar className="w-20 h-20 border-4 border-primary/20 flex-shrink-0">
-                        <AvatarImage src="/photo.png" alt="Rohan Akode Profile Picture" />
+                        <AvatarImage src="/profile-pic.jpg" alt="Rohan Akode Profile Picture" />
                         <AvatarFallback className="text-xl font-semibold bg-primary text-[var(--text)]">RA</AvatarFallback>
                     </Avatar>
 
