@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     description: "Full-stack web developer specializing in React, Next.js, and modern web technologies",
     creator: "@rohanakode",
   },
+  icons: {
+    icon: '/favicon.png'
+  }
 };
 
 export default function RootLayout({

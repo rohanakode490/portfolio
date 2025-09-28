@@ -57,9 +57,8 @@ export default function Profile() {
 
                 <div className="mb-6">
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                        Building <strong className="font-semibold text-foreground">scalable</strong>, high-performance digital products from concept to deployment.
-                        Specialized in <strong className="font-semibold text-foreground">React ecosystem architecture</strong> and robust
-                        <strong className="font-semibold text-foreground"> Node.js APIs</strong>.
+                        Experience in developing and deploying applications built with <strong className="font-semibold text-foreground">React</strong>
+                        and <strong className="font-semibold text-foreground">Node.js.</strong>
                     </p>
                 </div>
 
