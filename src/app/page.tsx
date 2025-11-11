@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { scrollToSection } from "@/lib/navigation"
 import BackgroundElements from "@/components/background-elements";
 import Footer from "@/components/footer";
+import InitialLoadingScreen from "@/components/initial-loading-screen";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("experience")
@@ -53,6 +54,7 @@ export default function Home() {
 
   return (
     <>
+      <InitialLoadingScreen />
       <div className="min-h-screen bg-background relative">
         <BackgroundElements />
         <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
