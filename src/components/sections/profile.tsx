@@ -1,5 +1,6 @@
-import { motion } from "framer-motion"
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
+import { useRef, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { Avatar, AvatarFallback, MotionAvatarImage } from "../ui/avatar"
 import { LuMapPin } from "react-icons/lu"
 import { Button } from "../ui/button"
 import SocialLinks from "../social-links"
@@ -7,6 +8,45 @@ import { GoBriefcase } from "react-icons/go"
 import { GrDocumentDownload } from "react-icons/gr"
 
 export default function Profile() {
+    const [imageToggled, setImageToggled] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+    const [displayedSrc, setDisplayedSrc] = useState("/profile-pic.jpg")
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+    const handleHoverEnter = () => {
+        setIsLoading(true)
+        timeoutRef.current = setTimeout(() => {
+            // figure the next src
+            const newSrc = imageToggled ? "/profile-pic.jpg" : "/profile-pic-2.jpg"
+
+            // preload
+            const img = new Image()
+            img.onload = () => {
+                // only update after load — prevents fallback flash
+                setDisplayedSrc(newSrc)
+                setImageToggled((prev) => !prev)
+                setIsLoading(false)
+                timeoutRef.current = null
+            }
+
+            // handle load error gracefully 
+            img.onerror = () => {
+                // keep old image, stop loading indicator
+                setIsLoading(false)
+                timeoutRef.current = null
+            }
+
+            img.src = newSrc
+        }, 2000)
+    }
+
+    const handleHoverLeave = () => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current)
+            timeoutRef.current = null
+            setIsLoading(false)
+        }
+    }
 
     return (
         <>
@@ -17,10 +57,64 @@ export default function Profile() {
                 className="max-w-sm mx-auto text-left"
             >
                 <div className="flex items-center gap-4 mb-3">
-                    <Avatar className="w-22 h-22 border-4 border-primary/20 flex-shrink-0">
-                        <AvatarImage src="/profile-pic.jpg" alt="Rohan Akode Profile Picture" />
-                        <AvatarFallback className="text-xl font-semibold bg-primary text-[var(--text)]">RA</AvatarFallback>
-                    </Avatar>
+
+                    <div className="relative inline-block"
+                        onMouseEnter={handleHoverEnter}
+                        onMouseLeave={handleHoverLeave}
+                    >
+                        <motion.div className="relative">
+                            <Avatar className="w-22 h-22 border-4 border-primary/20 flex-shrink-0 overflow-hidden">
+                                <div className="relative w-full h-full">
+                                    <AnimatePresence mode="wait">
+                                        <MotionAvatarImage
+                                            key={displayedSrc}
+                                            src={displayedSrc}
+                                            alt="Rohan Akode Profile Picture"
+                                            animate={{ opacity: 1, scale: [1, 1.06, 1.03] }}
+                                            exit={{ opacity: 1, scale: 1.03 }}
+                                            transition={{
+                                                opacity: { duration: 0.18, ease: "easeOut" },
+                                            }}
+                                        />
+                                    </AnimatePresence>
+                                </div>
+                                <AvatarFallback className="text-xl font-semibold bg-primary text-[var(--text)]">RA</AvatarFallback>
+                            </Avatar>
+
+                            {isLoading && (
+                                <div className="absolute inset-0 w-22 h-22 mx-auto">
+                                    <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                                        <circle
+                                            cx="50"
+                                            cy="50"
+                                            r="47"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            fill="none"
+                                            className="text-primary/20"
+                                        />
+                                        <circle
+                                            cx="50"
+                                            cy="50"
+                                            r="47"
+                                            stroke="url(#progressGradient)"
+                                            strokeWidth="2"
+                                            fill="none"
+                                            strokeLinecap="round"
+                                            strokeDasharray="295.31"
+                                            strokeDashoffset="295.31"
+                                            className="animate-[progress_2s_ease-in-out_forwards]"
+                                        />
+                                        <defs>
+                                            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="100%" stopColor="#1447e6" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                            )}
+                        </motion.div>
+                    </div>
 
                     <div className="flex flex-col gap-2">
                         <h2 className="text-3xl font-bold text-foreground leading-none">
