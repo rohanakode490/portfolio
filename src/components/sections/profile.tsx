@@ -151,7 +151,7 @@ export default function Profile() {
 
                 <div className="mb-6">
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                        Experience in developing and deploying applications built with <strong className="font-semibold text-foreground">React</strong>
+                        Experience in developing and deploying applications built with <strong className="font-semibold text-foreground">React</strong>{" "}
                         and <strong className="font-semibold text-foreground">Node.js.</strong>
                     </p>
                 </div>
