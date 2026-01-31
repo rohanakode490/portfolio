@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import { Card } from "../ui/card";
 import { LuCalendar, LuMapPin } from "react-icons/lu";
 
 const education = [
@@ -20,7 +20,6 @@ export default function Education() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
             >
-                <h2 className="text-3xl font-bold text-foreground mb-8">Education</h2>
 
                 <div className="space-y-4">
                     {education.map((edu, index) => (
@@ -31,9 +30,9 @@ export default function Education() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
                         >
-                            <Card className="hover:shadow-md transition-shadow duration-300 bg-card/50 backdrop-blur-sm border-border/50">
-                                <div className="flex items-center">
-                                    <div className="w-24 h-24 bg-muted/30 rounded-l-lg overflow-hidden relative flex-shrink-0 ">
+                            <Card className="hover:shadow-md transition-shadow duration-300 bg-transparent border-border/50 overflow-hidden">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center p-4 md:p-5 gap-4">
+                                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-muted/30 rounded-lg overflow-hidden relative flex-shrink-0 ">
                                         <motion.img
                                             src={"/uni.png"}
                                             alt={"IIT BBS"}
@@ -42,26 +41,26 @@ export default function Education() {
                                             transition={{ duration: 0.3 }}
                                         />
                                     </div>
-                                    <div className="flex-1">
-                                        <CardHeader className="pb-3">
-                                            <CardTitle className="text-lg text-card-foreground">
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex flex-col">
+                                            <h3 className="text-base md:text-lg font-bold text-card-foreground leading-tight">
                                                 {edu.degree}
-                                            </CardTitle>
-                                            <CardDescription className="text-base font-medium text-primary">
+                                            </h3>
+                                            <p className="text-sm md:text-base font-medium text-primary mt-1">
                                                 {edu.institution}
-                                            </CardDescription>
+                                            </p>
 
-                                            <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
-                                                <div className="flex justify-center items-center gap-1">
-                                                    <LuCalendar className="w-5 h-5" />
+                                            <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs md:text-sm text-muted-foreground mt-2">
+                                                <div className="flex items-center gap-1.5">
+                                                    <LuCalendar className="w-4 h-4" />
                                                     <span>{edu.duration}</span>
                                                 </div>
-                                                <div className="flex justify-center items-center gap-1">
-                                                    <LuMapPin className="w-5 h-5" />
+                                                <div className="flex items-center gap-1.5">
+                                                    <LuMapPin className="w-4 h-4" />
                                                     <span>{edu.location}</span>
                                                 </div>
                                             </div>
-                                        </CardHeader>
+                                        </div>
                                     </div>
                                 </div>
                             </Card>

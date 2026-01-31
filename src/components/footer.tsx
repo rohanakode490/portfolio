@@ -11,9 +11,9 @@ export default function Footer() {
             viewport={{ once: true }}
             className='py-16'
         >
-            <div className="flex flex-row justify-around ">
+            <div className="flex flex-row justify-around items-center">
                 <div>
-                    @2025 <Link href={"/"} className='hover:underline'>
+                    @2026 <Link href={"/"} className='hover:underline'>
                         rohanakode.dev
                     </Link>
                     {/* . Built with ❤️ by Rohan Akode */}

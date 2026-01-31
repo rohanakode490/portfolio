@@ -15,9 +15,10 @@ interface NavbarProps {
 
 const navigationItems = [
     { id: "experience", label: "Experience" },
+    { id: "education", label: "Education" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
-    { id: "education", label: "Education" },
+    { id: "opensource", label: "Open-Source" },
     { id: "contact", label: "Contact" },
 ]
 

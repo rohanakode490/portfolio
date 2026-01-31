@@ -142,7 +142,6 @@ export default function Profile() {
                         <GoBriefcase className="w-4 h-4 shrink-0 translate-y-[1px]" /> {/* Added translate-y to nudge icon */}
                         <span className="leading-[1.2]">Full Stack Developer</span> {/* Tightened line-height */}
                     </div>
-                    <span className="text-muted-foreground/50 hidden sm:inline mx-2 text-[0.9rem]">|</span> {/* Adjusted margin and size */}
                     <div className="flex items-center gap-1.5 text-base text-foreground font-medium">
                         <LuMapPin className="w-4 h-4 shrink-0 translate-y-[1px] opacity-80" /> {/* Subtle opacity */}
                         <span className="leading-[1.2]">Maharashtra, India</span>

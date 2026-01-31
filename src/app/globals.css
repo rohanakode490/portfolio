@@ -125,9 +125,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     scroll-behavior: smooth;
   }
@@ -138,6 +140,7 @@
   from {
     stroke-dashoffset: 295.31;
   }
+
   to {
     stroke-dashoffset: 0;
   }

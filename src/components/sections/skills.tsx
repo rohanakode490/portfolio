@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { BsDatabaseFill } from 'react-icons/bs'
 import { SiCss3, SiDocker, SiExpress, SiGit, SiHtml5, SiKubernetes, SiMongodb, SiMysql, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiTailwindcss } from 'react-icons/si'
-import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card'
+import { Card, CardDescription } from '../ui/card'
 import { Badge } from '../ui/badge'
 
 const techStack = [
@@ -33,10 +33,7 @@ export default function Skills() {
             >
                 <h2 className="text-3xl font-bold text-foreground mb-8">Tech Stack</h2>
 
-                <Card className='bg-card/50 backdrop-blur-sm border-border/50'>
-                    <CardHeader>
-                        <CardTitle className='text-xl text-card-foreground'>Technologies & Tools</CardTitle>
-                    </CardHeader>
+                <Card className='bg-transparent border-border/50'>
                     <CardDescription>
                         <div className="grid grid-cols-5 gap-0">
                             {techStack.map((tech, index) => (

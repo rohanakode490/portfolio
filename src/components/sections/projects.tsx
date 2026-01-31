@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card"
+import { Card } from "../ui/card"
 import { useState } from "react"
 import { Button } from "../ui/button"
 import { LuExternalLink, LuGithub } from "react-icons/lu"
@@ -57,9 +57,9 @@ export default function Projects() {
                         onHoverEnd={() => setHoveredProject(null)}
                         viewport={{ once: true }}
                     >
-                        <Card className="hover:shadow-md transition-all duration-300 overflow-hidden bg-card/50 backdrop-blur-sm border-border/50">
-                            <div className="flex">
-                                <div className="w-24 h-24 bg-muted/30 rounded-l-lg overflow-hidden relative flex-shrink-0">
+                        <Card className="hover:shadow-md transition-all duration-300 overflow-hidden bg-transparent border-border/50">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center p-4 md:p-5 gap-4">
+                                <div className="w-full sm:w-24 h-48 sm:h-24 md:w-32 md:h-32 bg-muted/30 rounded-lg overflow-hidden relative flex-shrink-0">
                                     <motion.img
                                         src={project.image}
                                         alt={project.title}
@@ -69,33 +69,34 @@ export default function Projects() {
                                     />
                                 </div>
 
-                                <div className="flex-1">
-                                    <CardHeader className="pb-2">
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex flex-col">
                                         <div className="flex justify-between items-start">
-                                            <div>
-                                                <CardTitle className="text-lg text-card-foreground">{project.title}</CardTitle>
-                                                <CardDescription className="text-sm mt-1">{project.descritption}</CardDescription>
+                                            <div className="flex-1 min-w-0">
+                                                <h3 className="text-base md:text-lg font-bold text-card-foreground leading-tight truncate">
+                                                    {project.title}
+                                                </h3>
+                                                <p className="text-xs md:text-sm text-muted-foreground mt-1 line-clamp-2">
+                                                    {project.descritption}
+                                                </p>
                                             </div>
-                                            <div className="flex gap-1 ml-4">
-                                                <Button size="sm" variant="ghost" asChild className="w-8 h-8 p-0">
+                                            <div className="flex gap-1 ml-4 flex-shrink-0">
+                                                <Button size="sm" variant="ghost" asChild className="w-8 h-8 p-0 cursor-pointer">
                                                     <Link href={project.github} target="_blank" rel="noopener noreferrer">
                                                         <LuGithub className="w-4 h-4" />
                                                     </Link>
                                                 </Button>
-                                                <Button size="sm" variant="ghost" asChild className="w-8 h-8 p-0">
+                                                <Button size="sm" variant="ghost" asChild className="w-8 h-8 p-0 cursor-pointer">
                                                     <Link href={project.live} target="_blank" rel="noopener noreferrer">
                                                         <LuExternalLink className="w-4 h-4" />
                                                     </Link>
                                                 </Button>
                                             </div>
                                         </div>
-                                    </CardHeader>
-
-                                    <CardContent className="pt-0">
-                                        <div className="flex flex-wrap gap-1">
+                                        <div className="flex flex-wrap gap-1 mt-3">
                                             <TechStack technologies={project.technologies} />
                                         </div>
-                                    </CardContent>
+                                    </div>
                                 </div>
                             </div>
                         </Card>
