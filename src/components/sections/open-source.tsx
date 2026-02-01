@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { Card } from "../ui/card"
 import { LuGitPullRequest, LuGitMerge, LuGithub, LuExternalLink, LuChevronDown } from "react-icons/lu"
+import { IconType } from "react-icons";
 import { Badge } from "../ui/badge"
 import Link from "next/link"
 import { useState } from "react"
@@ -71,7 +72,7 @@ const contributions = [
     }
 ]
 
-const statusConfig: Record<string, { color: string, icon: any }> = {
+const statusConfig: Record<string, { color: string, icon: IconType }> = {
     open: {
         color: "bg-green-500/10 text-green-600 border-green-500/30 hover:bg-green-500/20",
         icon: LuGitPullRequest
