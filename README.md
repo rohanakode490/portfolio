@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rohan Akode | Full-stack Web Developer
 
-## Getting Started
+Welcome to the repository of my personal portfolio. This website serves as a digital garden and a showcase of my journey as a developer, featuring my projects, technical skills, and contributions to the open-source community.
 
-First, run the development server:
+Check it out live: [rohanakode.dev](https://rohanakode.dev)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎨 Design Philosophy
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This portfolio is designed to be **minimalist yet interactive**. 
+- **Modern Aesthetic:** Built using **Tailwind CSS 4** and **Next.js 15** for a bleeding-edge web experience.
+- **Fluid Motion:** Leverages **Framer Motion** for smooth, context-aware transitions and expandable sections.
+- **Glassmorphism:** Uses subtle backdrop blurs and card-based layouts to create depth and focus.
+- **Theme-able:** Features a custom-built "Sunset Orange" theme that adapts to both light and dark modes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ The Engine Under the Hood
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend:** React 19, Next.js 15 (App Router), TypeScript.
+- **Styling:** Tailwind CSS 4, Radix UI Primitives.
+- **Animations:** Framer Motion (including layout animations for expandable cards).
+- **Backend:** Next.js API Routes for server-side logic (e.g., Contact Form).
+- **Integrations:** Brevo for automated email notifications.
 
-## Learn More
+## 🚀 Key Highlights
 
-To learn more about Next.js, take a look at the following resources:
+### Featured Projects
+- **FlowCatalyst:** A no-code automation platform built with Next.js, TypeScript, and Turborepo.
+- **EzCart:** A full-stack e-commerce solution integrated with Stripe for secure payments.
+- **Weather Dashboard:** A real-time forecasting app using the OpenWeather API.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Open Source Contributions
+I am a firm believer in the power of open source. This portfolio highlights my contributions to:
+- **Activepieces:** All-in-one AI automation designed to be extensible through a type-safe pieces framework 
+- **Mockoon:** The easiest and quickest way to design and run mock APIs.
+- **Shiki:** Collection of TextMate grammars and themes, converted to JSON and re-distributed as npm packages.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💻 Local Development
 
-## Deploy on Vercel
+If you'd like to explore the codebase or run it locally:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  **Clone & Install:**
+    ```bash
+    git clone https://github.com/rohanakode490/portfolio.git
+    cd portfolio
+    npm install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2.  **Environment Setup:**
+    Configure your `.env.local` for the contact form functionality:
+    ```env
+    BREVO_API_KEY=...
+    BREVO_USER_NAME=...
+    BREVO_USER_EMAIL=...
+    BREVO_TO_MAIL=...
+    BREVO_TO_NAME=...
+    ```
+
+3.  **Run:**
+    ```bash
+    npm run dev
+    ```
+
+## 📬 Contact Me
+
+I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+
+- **Email:** rohanakode52@gmail.com
+- **LinkedIn:** [linkedin.com/in/rohanakode](https://linkedin.com/in/rohan-akode)
+- **GitHub:** [@rohanakode490](https://github.com/rohanakode490)
+
+---
+*Built with ❤️ and a lot of caffeine by Rohan Akode.*
