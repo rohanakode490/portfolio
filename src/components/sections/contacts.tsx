@@ -105,7 +105,7 @@ export default function Contacts() {
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className='transition-all duration-200 focus:ring-2 focus:ring-primary/20'
+                                        className='transition-all duration-200 focus:ring-2 focus:ring-primary/20 border-border'
                                     />
                                 </motion.div>
                                 <motion.div
@@ -120,7 +120,7 @@ export default function Contacts() {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className='transition-all duration-200 focus:ring-2 focus:ring-primary/20'
+                                        className='transition-all duration-200 focus:ring-2 focus:ring-primary/20 border-border'
                                     />
                                 </motion.div>
                                 <motion.div
@@ -135,7 +135,7 @@ export default function Contacts() {
                                         value={formData.message}
                                         onChange={handleChange}
                                         required
-                                        className='transition-all duration-200 focus:ring-2 focus:ring-primary/20 resize-none h-full'
+                                        className='transition-all duration-200 focus:ring-2 focus:ring-primary/20 resize-none h-full border-border'
                                     />
                                 </motion.div>
 
@@ -149,7 +149,7 @@ export default function Contacts() {
                                         className='w-full group bg-primary hover:bg-primary/90 text-white border-0 hover:scale-105 transition-all duration-200'
                                     >
                                         {isSubmitting ? (
-                                            <span className="flex items-center">
+                                            <span className="flex items-center text-primary-foreground">
                                                 <div className="flex space-x-1 mr-2">
                                                     <motion.div
                                                         className="w-2 h-2 bg-white rounded-full"
@@ -173,10 +173,14 @@ export default function Contacts() {
                                                 Sending...
                                             </span>
                                         ) : (
-                                            <>
+                                            <motion.div 
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        className='text-primary-foreground flex justify-center items-center'
+                                        >
                                                 <LuSend className='w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-200' />
                                                 Send Message
-                                            </>
+                                            </motion.div>
                                         )}
                                     </Button>
                                 </motion.div>
@@ -185,7 +189,7 @@ export default function Contacts() {
                                     <motion.p
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
-                                        className='text-[var(--text)] text-sm mt-2 text-center'
+                                        className='text-primary-foreground text-sm mt-2 text-center'
                                     >
                                         Message sent successfully!
                                     </motion.p>

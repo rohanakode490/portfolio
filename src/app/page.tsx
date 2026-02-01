@@ -74,8 +74,10 @@ export default function Home() {
         <BackgroundElements />
         <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
         <div className="flex flex-col lg:grid lg:grid-cols-2 min-h-screen pt-16 md:pt-20 relative z-10">
-          <div className="p-6 md:p-6 lg:p-8 flex items-start justify-start lg:sticky lg:top-20 lg:h-[50vh]">
-            <Profile />
+          <div className="p-4 md:p-6 flex items-start justify-center lg:sticky lg:h-fit">
+            <div className="w-full max-w-lg">
+              <Profile />
+            </div>
           </div>
           <div className="p-4 md:p-6">
             <main className="min-h-screen overflow-hidden">

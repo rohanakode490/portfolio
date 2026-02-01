@@ -54,128 +54,114 @@ export default function Profile() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="max-w-sm mx-auto text-left"
+                className="w-full bg-card/30 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-border/40 shadow-sm text-left relative overflow-hidden group"
             >
-                <div className="flex items-center gap-4 mb-3">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16 transition-colors group-hover:bg-primary/10" />
+                
+                <div className="flex flex-col gap-6 relative z-10">
+                    <div className="flex items-center gap-5">
+                        <div className="relative inline-block"
+                            onMouseEnter={handleHoverEnter}
+                            onMouseLeave={handleHoverLeave}
+                        >
+                            <motion.div className="relative">
+                                <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-4 border-primary/20 flex-shrink-0 overflow-hidden shadow-xl">
+                                    <div className="relative w-full h-full">
+                                        <AnimatePresence mode="wait">
+                                            <MotionAvatarImage
+                                                key={displayedSrc}
+                                                src={displayedSrc}
+                                                alt="Rohan Akode Profile Picture"
+                                                animate={{ opacity: 1, scale: [1, 1.05, 1] }}
+                                                exit={{ opacity: 1, scale: 1 }}
+                                                transition={{
+                                                    opacity: { duration: 0.2 },
+                                                }}
+                                            />
+                                        </AnimatePresence>
+                                    </div>
+                                    <AvatarFallback className="text-2xl font-bold bg-primary text-primary-foreground">RA</AvatarFallback>
+                                </Avatar>
 
-                    <div className="relative inline-block"
-                        onMouseEnter={handleHoverEnter}
-                        onMouseLeave={handleHoverLeave}
-                    >
-                        <motion.div className="relative">
-                            <Avatar className="w-22 h-22 border-4 border-primary/20 flex-shrink-0 overflow-hidden">
-                                <div className="relative w-full h-full">
-                                    <AnimatePresence mode="wait">
-                                        <MotionAvatarImage
-                                            key={displayedSrc}
-                                            src={displayedSrc}
-                                            alt="Rohan Akode Profile Picture"
-                                            animate={{ opacity: 1, scale: [1, 1.06, 1.03] }}
-                                            exit={{ opacity: 1, scale: 1.03 }}
-                                            transition={{
-                                                opacity: { duration: 0.18, ease: "easeOut" },
-                                            }}
-                                        />
-                                    </AnimatePresence>
-                                </div>
-                                <AvatarFallback className="text-xl font-semibold bg-primary text-[var(--text)]">RA</AvatarFallback>
-                            </Avatar>
+                                {isLoading && (
+                                    <div className="absolute inset-0 w-full h-full">
+                                        <svg className="w-full h-full -rotate-90 scale-110" viewBox="0 0 100 100">
+                                            <circle
+                                                cx="50"
+                                                cy="50"
+                                                r="48"
+                                                stroke="currentColor"
+                                                strokeWidth="3"
+                                                fill="none"
+                                                className="text-primary/10"
+                                            />
+                                            <circle
+                                                cx="50"
+                                                cy="50"
+                                                r="48"
+                                                stroke="var(--primary)"
+                                                strokeWidth="3"
+                                                fill="none"
+                                                strokeLinecap="round"
+                                                strokeDasharray="301.59"
+                                                strokeDashoffset="301.59"
+                                                className="animate-[progress_2s_ease-in-out_forwards]"
+                                            />
+                                        </svg>
+                                    </div>
+                                )}
+                            </motion.div>
+                        </div>
 
-                            {isLoading && (
-                                <div className="absolute inset-0 w-22 h-22 mx-auto">
-                                    <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
-                                        <circle
-                                            cx="50"
-                                            cy="50"
-                                            r="47"
-                                            stroke="currentColor"
-                                            strokeWidth="2"
-                                            fill="none"
-                                            className="text-primary/20"
-                                        />
-                                        <circle
-                                            cx="50"
-                                            cy="50"
-                                            r="47"
-                                            stroke="url(#progressGradient)"
-                                            strokeWidth="2"
-                                            fill="none"
-                                            strokeLinecap="round"
-                                            strokeDasharray="295.31"
-                                            strokeDashoffset="295.31"
-                                            className="animate-[progress_2s_ease-in-out_forwards]"
-                                        />
-                                        <defs>
-                                            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                <stop offset="100%" stopColor="#1447e6" />
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                            )}
-                        </motion.div>
-                    </div>
-
-                    <div className="flex flex-col gap-2">
-                        <h2 className="text-3xl font-bold text-foreground leading-none">
-                            Rohan Akode
-                        </h2>
-                        <div className="flex items-center gap-2 flex-wrap">
+                        <div className="flex flex-col gap-2">
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-none">
+                                Rohan Akode
+                            </h2>
                             <motion.span
-                                whileHover={{ scale: 1.05 }}
-                                transition={{ duration: 0.2, ease: "easeOut" }}
-                                className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-green-500/10 text-green-600 border border-green-500/30"
-                                aria-label="Availability status"
+                                whileHover={{ scale: 1.02 }}
+                                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-green-500/10 text-green-600 border border-green-500/20 w-fit"
                             >
-                                <div className="w-1.5 h-1.5 bg-green-500 rounded-full shrink-0 translate-y-[0.5px]" />
-                                <span className="leading-[1.2]">Available for Full-Time</span>
+                                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                                Available for Full-Time
                             </motion.span>
                         </div>
                     </div>
-                </div>
 
-                <div
-                    className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-6 text-sm text-muted-foreground"
-                    aria-label="Profile metadata"
-                >
-                    <div className="flex items-center gap-1.5 text-base text-foreground font-medium">
-                        <GoBriefcase className="w-4 h-4 shrink-0 translate-y-[1px]" /> {/* Added translate-y to nudge icon */}
-                        <span className="leading-[1.2]">Full Stack Developer</span> {/* Tightened line-height */}
+                    <div className="space-y-4">
+                        <div className="flex flex-col gap-3 text-muted-foreground">
+                            <div className="flex items-center gap-3 text-base font-semibold text-foreground/90">
+                                <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                                    <GoBriefcase className="w-5 h-5" />
+                                </div>
+                                Full Stack Developer
+                            </div>
+                            <div className="flex items-center gap-3 text-base font-semibold text-foreground/90">
+                                <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                                    <LuMapPin className="w-5 h-5" />
+                                </div>
+                                Maharashtra, India
+                            </div>
+                        </div>
+
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                            Crafting high-performance, user-centric applications with <strong className="text-foreground font-bold">React</strong> and <strong className="text-foreground font-bold">Node.js</strong>. Focused on clean architecture and smooth UX.
+                        </p>
                     </div>
-                    <div className="flex items-center gap-1.5 text-base text-foreground font-medium">
-                        <LuMapPin className="w-4 h-4 shrink-0 translate-y-[1px] opacity-80" /> {/* Subtle opacity */}
-                        <span className="leading-[1.2]">Maharashtra, India</span>
-                    </div>
-                </div>
 
-                <div className="mb-6">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                        Experience in developing and deploying applications built with <strong className="font-semibold text-foreground">React</strong>{" "}
-                        and <strong className="font-semibold text-foreground">Node.js.</strong>
-                    </p>
-                </div>
-
-                <div className="grid grid-rows-1 grid-cols-[50%_50%] justify-around gap-2">
-
-                    <div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <Button
                             size="lg"
-                            variant="outline"
-                            className="w-full border-gray-300 hover:bg-gray-50 cursor-pointer"
-                            aria-label="Download Rohan Akode's Resume (PDF)"
+                            className="w-full h-full font-bold shadow-lg shadow-primary/20 cursor-pointer"
                             onClick={() => window.open("/Rohan-Akode.pdf", "_blank")}
                         >
                             <GrDocumentDownload className="w-4 h-4 mr-2" />
-                            Resume
+                            Download CV
                         </Button>
-                    </div>
-
-
-                    <div className="flex justify-around">
-                        <SocialLinks />
+                        <div className="flex items-center justify-center bg-card/50 rounded-lg border border-border/50 py-1">
+                            <SocialLinks />
+                        </div>
                     </div>
                 </div>
-
             </motion.div>
         </>
     )
