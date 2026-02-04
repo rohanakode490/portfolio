@@ -26,7 +26,7 @@ const contributions = [
         repo: "mockoon/mockoon",
         title: "feat: add base64url and base64urlDecode templating helpers", 
         image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
-        status: "open",
+        status: "merged",
         url: "https://github.com/mockoon/mockoon/pull/2082",
         date: "Jan 2026",
         oneLiner: "Added Base64URL encode/decode helpers for templating.",
