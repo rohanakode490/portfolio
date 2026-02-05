@@ -11,6 +11,17 @@ import TechStack from "../tech-stack"
 
 const contributions = [
     {
+        repo: "mockoon/mockoon.com",
+        title: "docs: add base64url and base64urlDecode templating helpers", 
+        image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
+        status: "merged",
+        url: "https://github.com/mockoon/mockoon.com/pull/185", 
+        date: "Feb 2026",
+        oneLiner: "Added documentation for Base64URL templating helpers to keep site guides in sync.",
+        description: "Updated the official Mockoon documentation to include the newly introduced `base64url` and `base64urlDecode` templating helpers. Added detailed usage examples, descriptions of arguments, and updated the summary table, ensuring users can discover and use these features effectively.",
+        tech: ["Markdown", "Documentation"],
+    },
+    {
         repo: "mockoon/mockoon",
         title: "feat: add header name and value auto-completion to response rules",
         image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
