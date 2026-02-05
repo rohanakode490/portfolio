@@ -8,12 +8,20 @@ import TechStack from "../tech-stack"
 
 const projects = [
     {
+        title: "OsnovyUI",
+        descritption: "Interactive Open-source React UI component library featuring high-quality, copy-paste friendly elements for modern web applications.",
+        image: "/p4.png",
+        technologies: ["React.js", "TypeScript"],
+        github: "https://github.com/rohanakode490/osnovy-ui",
+        live: "https://ui.rohanakode.dev/"
+    },
+    {
         title: "FlowCatalyst",
         descritption: "No code Automation Platform.",
         image: "/p1.png",
         technologies: ["Next.js", "TypeScript", "Node.js", "Prisma", "PostgreSQL", "Turborepo"],
         github: "https://github.com/rohanakode490/FlowCatalyst",
-        live: ""
+        live: "https://fc.rohanakode.dev/"
     },
     {
         title: "EzCart - E-Commerce Platform",
