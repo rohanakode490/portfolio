@@ -12,6 +12,17 @@ import TechStack from "../tech-stack"
 const contributions = [
     {
         repo: "mockoon/mockoon.com",
+        title: "Add recently used commands to command palette", 
+        image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
+        status: "open",
+        url: "https://github.com/mockoon/mockoon/pull/2091", 
+        date: "Feb 2026",
+        oneLiner: "Enhanced command palette by adding a ‘Recent Commands’ section for quicker access.",
+        description: "Introduced a recently used commands feature to the Command Palette that tracks and surfaces the last 10 unique commands. Pinned these recent commands to the top of search results and kept them persistent across sessions, allowing users to quickly rediscover frequently used actions and improve productivity.",
+        tech: ["Angular", "TypeScript"] 
+    },
+    {
+        repo: "mockoon/mockoon.com",
         title: "docs: add base64url and base64urlDecode templating helpers", 
         image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
         status: "merged",
