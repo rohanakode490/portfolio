@@ -36,7 +36,7 @@ const contributions = [
         repo: "mockoon/mockoon",
         title: "feat: add header name and value auto-completion to response rules",
         image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
-        status: "open",
+        status: "merged",
         url: "https://github.com/mockoon/mockoon/pull/2083",
         date: "Jan 2026",
         oneLiner: "Added header auto-completion to reduce errors in response rules.",
