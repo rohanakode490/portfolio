@@ -8,7 +8,7 @@ import Skills from "@/components/sections/skills";
 import Profile from "@/components/sections/profile";
 import Experience from "@/components/sections/experiece";
 import OpenSource from "@/components/sections/open-source";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { scrollToSection } from "@/lib/navigation"
 import BackgroundElements from "@/components/background-elements";
 import Footer from "@/components/footer";
@@ -18,16 +18,22 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("experience")
   const [activeTab, setActiveTab] = useState("experience")
 
-  // Sync tab state with URL hash
+  // Sync tab state with URL hash and handle initial scroll
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.replace("#", "").split("?")[0]
+      const fullHash = window.location.hash.replace("#", "")
+      const [hash] = fullHash.split("?")
+      
       if (["experience", "education"].includes(hash)) {
         setActiveTab(hash)
+        setTimeout(() => scrollToSection("experience-education"), 100)
+      } else if (hash) {
+        setTimeout(() => scrollToSection(hash), 100)
       }
     }
     
     handleHashChange()
+    
     window.addEventListener("hashchange", handleHashChange)
     return () => window.removeEventListener("hashchange", handleHashChange)
   }, [])
@@ -84,7 +90,12 @@ export default function Home() {
               {[
                 { id: "projects", component: <Projects /> },
                 { id: "skills", component: <Skills /> },
-                { id: "opensource", component: <><h2 className="text-3xl font-bold text-foreground mb-6">Open-Source Contributions</h2><OpenSource /></> }
+                { 
+                  id: "opensource", 
+                  component: (
+                      <OpenSource />
+                  ) 
+                },
               ].map(section => (
                 <motion.div key={section.id} id={section.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card/30 backdrop-blur-md rounded-3xl p-5 md:p-8 border border-border/40 shadow-sm scroll-mt-28">
                   {section.component}
