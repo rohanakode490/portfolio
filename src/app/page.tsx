@@ -8,7 +8,7 @@ import Skills from "@/components/sections/skills";
 import Profile from "@/components/sections/profile";
 import Experience from "@/components/sections/experiece";
 import OpenSource from "@/components/sections/open-source";
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState } from "react";
 import { scrollToSection } from "@/lib/navigation"
 import BackgroundElements from "@/components/background-elements";
 import Footer from "@/components/footer";

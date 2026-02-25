@@ -15,9 +15,20 @@ import Image from "next/image"
 const contributions = [
     {
         repo: "mockoon/mockoon.com",
-        title: "Add recently used commands to command palette", 
+        title: "feat: add replace and replaceAll templating helpers", 
         image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
         status: "open",
+        url: "https://github.com/mockoon/mockoon/pull/2100", 
+        date: "Feb 2026",
+        oneLiner: "Added `replace` and `replaceAll` helpers to the templating engine for safer string manipulation.",
+        description: "Introduced two new templating helpers — `replace` and `replaceAll` — enabling safer and flexible string manipulation in template expressions. Implemented logic to handle global replacements using escaped regular expressions in environments lacking native support, while gracefully handling edge cases like empty search terms. Registered the helpers in the templating registry, added autocomplete support for the editor, and ensured robust behavior with a comprehensive test suite.",
+        tech: ["Angular", "TypeScript"] 
+    },
+    {
+        repo: "mockoon/mockoon.com",
+        title: "Add recently used commands to command palette", 
+        image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
+        status: "merged",
         url: "https://github.com/mockoon/mockoon/pull/2091", 
         date: "Feb 2026",
         oneLiner: "Enhanced command palette by adding a ‘Recent Commands’ section for quicker access.",
