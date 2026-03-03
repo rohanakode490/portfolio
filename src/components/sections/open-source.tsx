@@ -17,7 +17,7 @@ const contributions = [
         repo: "mockoon/mockoon.com",
         title: "feat: add replace and replaceAll templating helpers", 
         image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
-        status: "open",
+        status: "merged",
         url: "https://github.com/mockoon/mockoon/pull/2100", 
         date: "Feb 2026",
         oneLiner: "Added `replace` and `replaceAll` helpers to the templating engine for safer string manipulation.",
