@@ -14,6 +14,17 @@ import Image from "next/image"
 
 const contributions = [
     {
+        repo: "mockoon/mockoon",
+        title: "fix: ensure stringify handles nested SafeStrings",
+        image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
+        status: "merged",
+        url: "https://github.com/mockoon/mockoon/pull/2112",
+        date: "Mar 2026",
+        oneLiner: "Fixed incorrect serialization of nested templating helper outputs.",
+        description:  "Resolved an issue where nested templating helpers returning SafeString objects produced incorrect JSON output during serialization. Updated the stringify helper to use a JSON replacer function that detects SafeString values at any depth and converts them back to primitive strings, ensuring consistent and correct JSON output for complex templating scenarios.",
+        tech: ["TypeScript", "Node.js"],
+    },
+    {
         repo: "mockoon/mockoon.com",
         title: "feat: add replace and replaceAll templating helpers", 
         image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
@@ -26,7 +37,7 @@ const contributions = [
     },
     {
         repo: "mockoon/mockoon.com",
-        title: "Add recently used commands to command palette", 
+        title: "feat: add recently used commands to command palette", 
         image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
         status: "merged",
         url: "https://github.com/mockoon/mockoon/pull/2091", 
