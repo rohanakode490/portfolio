@@ -1,22 +1,41 @@
 import { motion } from 'framer-motion'
 import { BsDatabaseFill } from 'react-icons/bs'
-import { SiCss3, SiDocker, SiExpress, SiGit, SiHtml5, SiKubernetes, SiMongodb, SiMysql, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiTailwindcss } from 'react-icons/si'
+import { SiApachekafka, SiC, SiCplusplus, SiCss3, SiDocker, SiExpress, SiGit, SiGo, SiHtml5, SiJavascript, SiKubernetes, SiMongodb, SiMysql, SiNextdotjs, SiNodedotjs, SiPostgresql, SiPython, SiReact, SiRedis, SiRust, SiTailwindcss, SiTypescript } from 'react-icons/si'
 import { Card, CardDescription } from '../ui/card'
 import { Badge } from '../ui/badge'
 
 const techStack = [
+    // Languages & Web Core
     { name: "HTML", icon: <SiHtml5 className='group-hover:text-[#E34F26]' /> },
     { name: "CSS", icon: <SiCss3 className='group-hover:text-[#663399]' /> },
-    { name: "TailwindCSS", icon: <SiTailwindcss className='group-hover:text-[#06B6D4]' /> },
+    { name: "JavaScript", icon: <SiJavascript className='group-hover:text-[#F7DF1E]' /> },
+    { name: "TypeScript", icon: <SiTypescript className='group-hover:text-[#3178C6]' /> },
+    { name: "Python", icon: <SiPython className='group-hover:text-[#3776AB]' /> },
+
+    // Systems & Mobile
+    { name: "C", icon: <SiC className='group-hover:text-[#A8B9CC]' /> },
+    { name: "C++", icon: <SiCplusplus className='group-hover:text-[#00599C]' /> },
+    { name: "Golang", icon: <SiGo className='group-hover:text-[#00ADD8]' /> },
+    { name: "Rust", icon: <SiRust className='group-hover:text-[#F74C00]' /> },
+    { name: "React Native", icon: <SiReact className='group-hover:text-[#61DAFB]' /> },
+
+    // Frontend Frameworks & Tools
     { name: "React.js", icon: <SiReact className='group-hover:text-[#61DAFB]' /> },
     { name: "Next.js", icon: <SiNextdotjs className='group-hover:text-[#fff]' /> },
+    { name: "TailwindCSS", icon: <SiTailwindcss className='group-hover:text-[#06B6D4]' /> },
     { name: "Framer Motion", icon: <svg role="img" viewBox="0 0 200 54" xmlns="http://www.w3.org/2000/svg" className="sm:group-hover:-translate-y-1 size-6 transition-all duration-300 undefined w-12 h-12 pl-2 rounded-xl group-hover:text-[#000] group-hover:bg-[#FFF42B]"><title>Framer Motion</title><path fill="currentColor" d="M 58.148 0 L 27.72 53.952 L 0 53.952 L 23.759 11.824 C 27.442 5.294 36.633 0 44.288 0 Z M 126.125 13.488 C 126.125 6.039 132.33 0 139.985 0 C 147.64 0 153.845 6.039 153.845 13.488 C 153.845 20.937 147.64 26.976 139.985 26.976 C 132.33 26.976 126.125 20.937 126.125 13.488 Z M 63.345 0 L 91.065 0 L 60.638 53.952 L 32.918 53.952 Z M 96.085 0 L 123.805 0 L 100.046 42.128 C 96.363 48.659 87.172 53.952 79.517 53.952 L 65.657 53.952 Z" /></svg> },
     { name: "Node.js", icon: <SiNodedotjs className='group-hover:text-[#5FA04E]' /> },
+
+    // Backend & Databases
     { name: "Express", icon: <SiExpress className='group-hover:text-[#fff]' /> },
-    { name: "MySQL", icon: <SiMysql className='group-hover:text-[#4479A1]' /> },
     { name: "PostgreSQL", icon: <SiPostgresql className='group-hover:text-[#4169E1]' /> },
+    { name: "MySQL", icon: <SiMysql className='group-hover:text-[#4479A1]' /> },
     { name: "PLSQL", icon: <BsDatabaseFill className='group-hover:text-[#FF0808]' /> },
     { name: "MongoDb", icon: <SiMongodb className='group-hover:text-[#47A248]' /> },
+
+    // Caching, Messaging & DevOps
+    { name: "Redis", icon: <SiRedis className='group-hover:text-[#DC382D]' /> },
+    { name: "Kafka", icon: <SiApachekafka className='group-hover:text-[#fff]' /> },
     { name: "Docker", icon: <SiDocker className='group-hover:text-[#2496ED]' /> },
     { name: "Kubernetes", icon: <SiKubernetes className='group-hover:text-[#326CE5]' /> },
     { name: "Git", icon: <SiGit className='group-hover:text-[#F05032]' /> },

@@ -139,12 +139,12 @@ export default function Profile() {
                                 <div className="p-2 rounded-lg bg-primary/10 text-primary">
                                     <LuMapPin className="w-5 h-5" />
                                 </div>
-                                Maharashtra, India
+                                Los Angeles, USA 
                             </div>
                         </div>
 
                         <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                            Crafting high-performance, user-centric applications with <strong className="text-foreground font-bold">React</strong> and <strong className="text-foreground font-bold">Node.js</strong>. Focused on clean architecture and smooth UX.
+                            Crafting high-performance, user-centric applications. Focused on clean architecture and smooth UX.
                         </p>
                     </div>
 
