@@ -15,6 +15,17 @@ import Image from "next/image"
 const contributions = [
     {
         repo: "mockoon/mockoon",
+        title: "feat: add undo toast to recover deleted entities",
+        image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
+        status: "open",
+        url: "https://github.com/mockoon/mockoon/pull/2363",
+        date: "Sep 2026",
+        oneLiner: "Added an interactive 'Undo' toast action to recover recently deleted entities.",
+        description: "Introduced an interactive 'Undo' action in toast notifications upon entity deletion (routes, folders, responses, databuckets, and callbacks) to prevent accidental data loss. Extended the Toast model and ToastsService with interactive action callbacks, implemented position-preserving mutators (`insertAfterUuid`) across commons and cloud sync to restore items to their original order, and hooked deletion handlers without requiring data schema migrations.",
+        tech: ["TypeScript", "Angular", "Bootstrap"],
+    },
+    {
+        repo: "mockoon/mockoon",
         title: "fix: ensure stringify handles nested SafeStrings",
         image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
         status: "merged",
