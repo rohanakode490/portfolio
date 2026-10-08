@@ -8,6 +8,14 @@ import TechStack from "../tech-stack"
 
 const projects = [
     {
+        title: "CDUS - Cross-Device Unified System",
+        descritption: "Local-first system for syncing clipboards and transferring files between Linux, Windows, macOS, and Android devices using libp2p and Noise encryption.",
+        image: "/cdus.png",
+        technologies: ["Rust", "Tauri", "React.js", "TypeScript", "Kotlin", "libp2p"],
+        github: "https://github.com/rohanakode490/cdus",
+        live: "https://cdus.rohanakode.dev"
+    },
+    {
         title: "OsnovyUI",
         descritption: "Interactive Open-source React UI component library featuring high-quality, copy-paste friendly elements for modern web applications.",
         image: "/p4.png",
