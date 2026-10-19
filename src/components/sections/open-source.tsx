@@ -14,6 +14,17 @@ import Image from "next/image"
 
 const contributions = [
     {
+        repo: "real-logic/simple-binary-encoding",
+        title: "[C++] Add sbeSetAllFields to generated codecs",
+        image: "https://avatars.githubusercontent.com/u/10185998?s=48&v=4",
+        status: "open",
+        url: "https://github.com/real-logic/simple-binary-encoding/pull/1135",
+        date: "Oct 2026",
+        oneLiner: "Added compile-time field initialization enforcement via sbeSetAllFields in C++ generated codecs.",
+        description: "Implemented code generation for a `sbeSetAllFields()` method across C++ message, repeating group, and composite encoders to guarantee at compile time that all fields are initialized during encoding. Designed an API that accepts scalar and enum values, raw pointers for fixed-size arrays, and forwarding-reference callable handlers (lambdas) using `std::forward` for composites and bitsets, preventing uninitialized memory bugs during schema evolution while keeping argument lists concise.",
+            tech: ["C++", "Java", "SBE", "Low Latency"],
+        },
+    {
         repo: "mockoon/mockoon",
         title: "feat: add undo toast to recover deleted entities",
         image: "https://avatars.githubusercontent.com/u/49429147?s=48&v=4",
